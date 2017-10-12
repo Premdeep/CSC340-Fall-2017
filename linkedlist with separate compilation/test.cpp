@@ -3,25 +3,27 @@
 int main(){	
 	
 
-	linkedList* l = new linkedList();
-	(*l).appendNode(0);
-	l->appendNode(1);
-	l->appendNode(2);
-	l->appendNode(3);
-	l->appendNode(4);
-	l->appendNode(5);
-
-	l->printList();	
-	// delete l;
-	// l = NULL;
-	l->deleteNode(3);
-	l->printList();
-	// l->deleteFront();
-	// l->printList();
 	
-	//l->deleteList();
-	
+linkedList* l1 = new linkedList();
 
+
+l1->appendNode(1);
+l1->appendNode(2);
+l1->appendNode(3);
+
+//(*l1).printList();
+
+//linkedList l2(l1);
+
+// l1.appendNode(9);
+// l2.appendNode(10);
+
+// cout<<"========="<<endl;
+
+l1->printList();
+//l2.printList();
+
+delete l1;
 
 
 	return 0;

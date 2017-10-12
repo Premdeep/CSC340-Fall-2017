@@ -155,3 +155,66 @@ linkedList::linkedList(){
 	}
 
 
+linkedList& linkedList::operator=(const linkedList& rhs){
+
+				if(&rhs == this)
+					return *this;
+				if(rhs.head == NULL){				
+
+						deleteList();
+						return *this;
+				}
+
+				deleteList();
+
+				node* rhsHead = rhs.head;
+
+				head = new node();
+				head->data = rhsHead->data;
+				node* walk = head;
+				rhsHead = rhsHead->next;
+				size = 1;
+
+				while(rhsHead != NULL){
+
+						node* temp = new node();
+						temp->data = rhsHead->data;
+						temp->next = NULL;
+						walk->next = temp;
+						walk = walk->next;
+						rhsHead = rhsHead->next;
+						size++;
+
+				}
+
+				return *this;
+
+}
+
+linkedList::linkedList(const linkedList& rhs) {
+
+	node* rhsHead = rhs.head;
+	node* walk;
+	head = NULL;
+	size = 0;
+	while(rhsHead != NULL){
+
+		node* temp  = new node;
+		temp->data = rhsHead->data;
+		temp->next = NULL;
+		if(head == NULL){
+			head = temp;
+			walk = head;			
+		}else{
+			walk->next = temp;
+			walk = walk->next;
+		}
+
+		rhsHead = rhsHead->next;
+		size++;
+
+	}
+
+
+}
+

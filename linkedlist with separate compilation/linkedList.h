@@ -18,6 +18,7 @@ private:
 public:
 	linkedList();
 	linkedList(int data);
+	linkedList(const linkedList& rhs);
 	~linkedList();
 	int getSize();
 	void appendNode(int data);
@@ -27,5 +28,7 @@ public:
 	void deleteNode(int data);
 	void printList();
 	void deleteList();
+	linkedList& operator=(const linkedList& rhs);
+
 	
 };
